@@ -1,0 +1,7 @@
+version: "3"
+services:
+  ui-service:
+    image: aimvector/ui-microservice
+    build: .
+    ports:
+      - "80:80"
