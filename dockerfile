@@ -4,4 +4,5 @@ FROM nginx:1.15.8-alpine
 copy ./nginx.conf /etc/nginx/nginx.conf
 
 #content
-copy ./index.html /usr/share/nginx/html/index.html
+copy ./*.html /usr/share/nginx/html/
+copy ./*.js /usr/share/nginx/html/
