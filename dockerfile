@@ -20,5 +20,6 @@ RUN mkdir /app
 #content from build
 COPY --from=build /src/frame-app/build/ /usr/share/nginx/html/
 RUN ls -l /usr/share/nginx/html/
+
 #copy ./*.html /usr/share/nginx/html/
 #copy ./*.js /usr/share/nginx/html/
