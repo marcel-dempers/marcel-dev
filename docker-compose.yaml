@@ -5,11 +5,11 @@ services:
     build: .
     ports:
       - "80:80"
-  content-service-test:
-    image: aimvector/content-service-test
-    build: ./test
-    ports:
-     - "81:80"
+  # content-service-test:
+  #   image: aimvector/content-service-test
+  #   build: ./test
+  #   ports:
+  #    - "81:80"
   # dev-image:
   #   image: aimvector/ui-microservice-build
   #   build: ./src
