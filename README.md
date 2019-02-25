@@ -4,41 +4,23 @@ My scalable microservice architecture
 
 ## Get our Docker container ready!
 
-We need to build the "build" docker file that has node, npm, npx and other things
+We have two dockerfiles here, our development image that has node, npm, npx and other dependancies and a production multistage image
 
 You can use compose wich has a reference like below:
 ```
 docker-compose build 
 ```
-OR
+
+You can run the development server with :
 ```
-cd ./src
-docker build . -t frame-app
-```
-And then get into it with:
-```
-docker run -it --rm -v ${PWD}:/src -p 3000:3000 -w /src frame-app sh
+docker-compose up dev-image
 ```
 
-```
- docker run -it --rm -v ${PWD}:/src -p 3000:3000 -w /src aimvector/ui-microservice-build sh
-```
+Production server is a lightweight NGINX image that simply serves the output of <br/>
+the `npm build` result. Take a look at the `dockerfile` to see how we achieve multistage build for small production image
+
 
 I used the tutorial below:
 
 `https://facebook.github.io/create-react-app/docs/getting-started`
 
-
-## Creating our app
-
-```
-npx create-react-app frame-app
-```
-
-Once it was created, I built it and ran it:
-```
-cd frame-app
-npm start
-```
-
-This will run everything in development mode.
