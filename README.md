@@ -1,5 +1,6 @@
 # marcel-dev
-My scalable microservice architecture
+My scalable microservice architecture (Work in Progress)
+Follow along by subscribing at [YouTube](https://youtube.com/c/marceldempers)
 
 
 ## Get our Docker container ready!
