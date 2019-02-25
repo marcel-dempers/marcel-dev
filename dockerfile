@@ -7,7 +7,7 @@ COPY ./src/frame-app/package.json /src/frame-app/package.json
 RUN cd frame-app && ls -l && npm install
 
 COPY ./src/ /src/
-RUN cd /src/frame-app/ && npm run build
+RUN cd /src/frame-app/ && npm run build --mode staging
 
 RUN ls -l /src/frame-app/build/
 

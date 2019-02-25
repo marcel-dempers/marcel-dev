@@ -5,12 +5,11 @@ services:
     build: .
     ports:
       - "80:80"
-  content-service-test:
-    image: aimvector/composite-service
-    build: ./test
+  dev-image:
+    image: aimvector/ui-microservice-build
+    build:
+      context: .
+      dockerfile: dev.dockerfile
     ports:
-      - "81:80"
-  # dev-image:
-  #   image: aimvector/ui-microservice-build
-  #   build: ./src
+    - "5000:5000"
   
