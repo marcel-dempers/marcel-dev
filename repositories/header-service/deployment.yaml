@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: header-service
+  labels:
+    app: header-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: header-service
+  template:
+    metadata:
+      labels:
+        app: header-service
+    spec:
+      containers:
+      - name: header-service
+        image: aimvector/ui-header-microservice
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: header-service
+spec:
+  selector:
+    app: header-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

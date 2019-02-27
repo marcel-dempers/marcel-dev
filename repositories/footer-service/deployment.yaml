@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: footer-service
+  labels:
+    app: footer-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: footer-service
+  template:
+    metadata:
+      labels:
+        app: footer-service
+    spec:
+      containers:
+      - name: footer-service
+        image: aimvector/ui-footer-microservice
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: footer-service
+spec:
+  selector:
+    app: footer-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

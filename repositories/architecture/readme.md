@@ -34,3 +34,13 @@ Bootstrap it with:
 ```
 docker-compose up
 ```
+
+# Deploy to Kubernetes
+
+```
+kubectl create ns architecture
+kubectl -n architecture apply -f ./repositories/frame-service/deployment.yaml
+kubectl -n architecture apply -f ./repositories/header-service/deployment.yaml
+kubectl -n architecture apply -f ./repositories/content-service/deployment.yaml
+kubectl -n architecture apply -f ./repositories/footer-service/deployment.yaml
+```

@@ -2,7 +2,7 @@ version: "3"
 services:
   frame-service:
     container_name: frame-service
-    image: aimvector/frame-microservice
+    image: aimvector/ui-frame-microservice
     build: ../frame-service
     ports:
       - "80:80"
@@ -22,7 +22,7 @@ services:
     - "82:80"
   content-service:
     container_name: content-service
-    image: aimvector/ui-content-microservice
+    image: aimvector/ui-content-microservice:1.0.1
     build:
       context: ../content-service
     ports:

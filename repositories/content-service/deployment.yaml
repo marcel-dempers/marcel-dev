@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: content-service
+  labels:
+    app: content-service
+    keel.sh/policy: minor
+    keel.sh/trigger: poll
+  annotations:
+      keel.sh/pollSchedule: "@every 10s"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: content-service
+  template:
+    metadata:
+      labels:
+        app: content-service
+    spec:
+      containers:
+      - name: content-service
+        image: aimvector/ui-content-microservice:1.0.0
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: content-service
+spec:
+  selector:
+    app: content-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
