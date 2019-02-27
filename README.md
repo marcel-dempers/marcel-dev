@@ -3,25 +3,24 @@ My scalable microservice architecture (Work in Progress)
 Follow along by subscribing at [YouTube](https://youtube.com/c/marceldempers)
 
 
+This repository serves as a reference architecture for my micro service architecture. Currently supports the following components:
+
+Composite UI's:
+* Frame-service
+* Header-service
+* Content-service
+* Footer-service
+
 ## Get our Docker container ready!
 
-We have two dockerfiles here, our development image that has node, npm, npx and other dependancies and a production multistage image
+Use the bootstrap repository under the [architecture](./repositories/architecture) to get the platform up and running locally.
 
-You can use compose wich has a reference like below:
-```
-docker-compose build 
-```
+Requirements :
 
-You can run the development server with :
-```
-docker-compose up dev-image
-```
-
-Production server is a lightweight NGINX image that simply serves the output of <br/>
-the `npm build` result. Take a look at the `dockerfile` to see how we achieve multistage build for small production image
+* Docker
+* Docker-Compose
+* Kubernetes (Coming soon!)
 
 
-I used the tutorial below:
 
-`https://facebook.github.io/create-react-app/docs/getting-started`
 

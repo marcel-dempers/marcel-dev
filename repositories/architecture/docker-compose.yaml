@@ -1,0 +1,29 @@
+version: "3"
+services:
+  frame-service:
+    container_name: frame-service
+    image: aimvector/frame-microservice
+    build: ../frame-service
+    ports:
+      - "80:80"
+  header-service:
+    container_name: header-service
+    image: aimvector/ui-header-microservice
+    build:
+      context: ../header-service
+    ports:
+    - "81:80"
+  footer-service:
+    container_name: footer-service
+    image: aimvector/ui-footer-microservice
+    build:
+      context: ../footer-service
+    ports:
+    - "82:80"
+  content-service:
+    container_name: content-service
+    image: aimvector/ui-content-microservice
+    build:
+      context: ../content-service
+    ports:
+    - "83:80"
