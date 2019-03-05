@@ -2,27 +2,27 @@ version: "3"
 services:
   frame-service:
     container_name: frame-service
-    image: aimvector/ui-frame-microservice
+    image: aimvector/marcel-dev/ui-frame-microservice:0.0.1
     build: ../frame-service
     ports:
       - "80:80"
   header-service:
     container_name: header-service
-    image: aimvector/ui-header-microservice
+    image: aimvector/marcel-dev/ui-header-microservice:0.0.1
     build:
       context: ../header-service
     ports:
     - "81:80"
   footer-service:
     container_name: footer-service
-    image: aimvector/ui-footer-microservice
+    image: aimvector/marcel-dev/ui-footer-microservice:0.0.1
     build:
       context: ../footer-service
     ports:
     - "82:80"
   content-service:
     container_name: content-service
-    image: aimvector/ui-content-microservice:1.0.1
+    image: aimvector/marcel-dev/ui-content-microservice:0.0.1
     build:
       context: ../content-service
     ports:
