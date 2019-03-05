@@ -4,7 +4,7 @@ metadata:
   name: frame-service
   labels:
     app: frame-service
-    keel.sh/policy: minor
+    keel.sh/policy: all
     keel.sh/trigger: poll
   annotations:
       keel.sh/pollSchedule: "@every 10s"
