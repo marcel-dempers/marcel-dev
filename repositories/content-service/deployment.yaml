@@ -4,10 +4,11 @@ metadata:
   name: content-service
   labels:
     app: content-service
-    keel.sh/policy: "glob:ui-content-microservice*"
+    keel.sh/policy: minor
     keel.sh/trigger: poll
   annotations:
       keel.sh/pollSchedule: "@every 10s"
+      keel.sh/policy: "glob:ui-content-microservice*"
 spec:
   replicas: 3
   selector:
@@ -20,7 +21,7 @@ spec:
     spec:
       containers:
       - name: content-service
-        image: aimvector/ui-content-microservice:1.0.0
+        image: aimvector/marcel-dev:ui-content-microservice-0.0.4
         ports:
         - containerPort: 80
 ---

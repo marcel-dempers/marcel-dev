@@ -4,10 +4,11 @@ metadata:
   name: header-service
   labels:
     app: header-service
-    keel.sh/policy: "glob:ui-header-microservice*"
+    keel.sh/policy: minor
     keel.sh/trigger: poll
   annotations:
       keel.sh/pollSchedule: "@every 10s"
+      keel.sh/policy: "glob:ui-header-microservice*"
 spec:
   replicas: 3
   selector:
@@ -20,7 +21,7 @@ spec:
     spec:
       containers:
       - name: header-service
-        image: aimvector/ui-header-microservice
+        image: aimvector/marcel-dev:ui-header-microservice-0.0.4
         ports:
         - containerPort: 80
 ---
