@@ -4,7 +4,7 @@ metadata:
   name: content-service
   labels:
     app: content-service
-    keel.sh/policy: minor
+    keel.sh/policy: "glob:ui-content-microservice*"
     keel.sh/trigger: poll
   annotations:
       keel.sh/pollSchedule: "@every 10s"

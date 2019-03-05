@@ -4,6 +4,10 @@ metadata:
   name: header-service
   labels:
     app: header-service
+    keel.sh/policy: "glob:ui-header-microservice*"
+    keel.sh/trigger: poll
+  annotations:
+      keel.sh/pollSchedule: "@every 10s"
 spec:
   replicas: 3
   selector:

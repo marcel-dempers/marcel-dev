@@ -4,6 +4,10 @@ metadata:
   name: footer-service
   labels:
     app: footer-service
+    keel.sh/policy: "glob:ui-footer-microservice*"
+    keel.sh/trigger: poll
+  annotations:
+      keel.sh/pollSchedule: "@every 10s"
 spec:
   replicas: 3
   selector:

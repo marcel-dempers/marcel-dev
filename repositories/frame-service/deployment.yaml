@@ -4,6 +4,10 @@ metadata:
   name: frame-service
   labels:
     app: frame-service
+    keel.sh/policy: "glob:ui-frame-microservice*"
+    keel.sh/trigger: poll
+  annotations:
+      keel.sh/pollSchedule: "@every 10s"
 spec:
   replicas: 3
   selector:
