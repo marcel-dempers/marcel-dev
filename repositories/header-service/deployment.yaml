@@ -21,11 +21,15 @@ spec:
     spec:
       containers:
       - name: header-service
-        image: aimvector/marcel-dev:0.0.5-uiheaderservice
+        image: aimvector/marcel-dev:0.0.7-uiheaderservice
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: myregistrykey
+        livenessProbe:
+          httpGet:
+            path: /status
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
 ---
 kind: Service
 apiVersion: v1
