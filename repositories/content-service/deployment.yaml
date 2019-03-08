@@ -10,7 +10,7 @@ metadata:
       keel.sh/pollSchedule: "@every 1m"
       keel.sh/policy: 'major'
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: content-service
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: content-service
-        image: aimvector/marcel-dev:0.0.7-uicontentservice
+        image: aimvector/marcel-dev:0.0.8-uicontentservice
         ports:
         - containerPort: 80
         livenessProbe:
@@ -30,6 +30,13 @@ spec:
             port: 80
           initialDelaySeconds: 3
           periodSeconds: 3
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
 ---
 kind: Service
 apiVersion: v1
