@@ -1,22 +1,24 @@
 # Reference Architecture
 ```
-               /header       +----------+
-                         +--->Header UI |
-                         |   +----------+
-+----------+             |
-|          +-------------+
-| FRAME UI |             |
-+----------+   /content  |
- NGINX SSI               |
- REMOTE CALLs            |   +------------+
-                         +---> Content UI |
-                         |   +------------+
-                         |
-                         |
-                         |
-              /footer    |   +------------+
-                         +-->+ Footer UI  |
-                             +------------+
+
+
+                                                   /header     +----------+
+                                                           +--->Header UI |
+                                                           |   +----------+
+               +-----------+      +----------+             |
+               |INGRESS    |      |          +-------------+
+     +-------> |CONTROLLER | +--> | FRAME UI |             |
+               +-----------+      +----------+   /content  |
+                                   NGINX SSI               |
+                                   REMOTE CALLs            |   +------------+
+                                                           +---> Content UI |
+                                                           |   +------------+
+                                                           |
+                                                           |
+                                                           |
+                                                /footer    |   +------------+
+                                                           +-->+ Footer UI  |
+                                                               +------------+
 ```
 # How to Bootstrap
 
