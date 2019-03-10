@@ -1,5 +1,5 @@
-# marcel-dev
-My scalable microservice architecture (Work in Progress)
+# My scalable microservice architecture YouTube series (Work in Progress)
+
 Follow along by subscribing at [YouTube](https://youtube.com/c/marceldempers)
 
 ```
