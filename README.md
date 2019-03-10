@@ -2,6 +2,28 @@
 My scalable microservice architecture (Work in Progress)
 Follow along by subscribing at [YouTube](https://youtube.com/c/marceldempers)
 
+```
+
+
+                                                   /header     +----------+
+                                                           +--->Header UI |
+                                                           |   +----------+
+               +-----------+      +----------+             |
+               |INGRESS    |      |          +-------------+
+     +-------> |CONTROLLER | +--> | FRAME UI |             |
+               +-----------+      +----------+   /content  |
+                                   NGINX SSI               |
+                                   REMOTE CALLs            |   +------------+
+                                                           +---> Content UI |
+                                                           |   +------------+
+                                                           |
+                                                           |
+                                                           |
+                                                /footer    |   +------------+
+                                                           +-->+ Footer UI  |
+                                                               +------------+
+```
+
 This repository serves as a reference architecture for my micro service architecture. 
 The `repositories` folder represent distributed GIT repositories.
 For my website or production environment I have separate repositories.
