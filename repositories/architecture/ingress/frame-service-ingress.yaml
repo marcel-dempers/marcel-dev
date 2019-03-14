@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: frame-service
+  namespace: architecture
+spec:
+  rules:
+  - host: marcel-dev
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frame-service
+          servicePort: 80
