@@ -1,0 +1,13 @@
+# Prometheus configuration format https://prometheus.io/docs/prometheus/latest/configuration/configuration/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: prometheus
+data:
+  prometheus.yml: |
+    scrape_configs:
+    - job_name: prometheus
+      static_configs:
+      - targets:
+        - traefik-ingress-service.kube-system:8080
