@@ -4,24 +4,31 @@ Follow along by subscribing at [YouTube](https://youtube.com/c/marceldempers)
 
 ```
 
-
                                                    /header     +----------+
                                                            +--->Header UI |
                                                            |   +----------+
-               +-----------+      +----------+             |
-               |INGRESS    |      |          +-------------+
-     +-------> |CONTROLLER | +--> | FRAME UI |             |
-               +-----------+      +----------+   /content  |
-                                   NGINX SSI               |
-                                   REMOTE CALLs            |   +------------+
-                                                           +---> Content UI |
-                                                           |   +------------+
-                                                           |
-                                                           |
-                                                           |
-                                                /footer    |   +------------+
-                                                           +-->+ Footer UI  |
-                                                               +------------+
+         +-----------+            +----------+             |
+         |INGRESS    | marcel.com |          +-------------+
+-------> |CONTROLLER |+---------> | FRAME UI |             |
+         + TRAEFIK   +            +----------+   /content  |
+         +-----------+             NGINX SSI               |
+                +                  REMOTE CALLs            |   +------------+
+                |                                          +---> Content UI |
+                |                                          |   +------------+
+                |                                          |
+                |                                          |
+                |                                          |
+                |                               /footer    |   +------------+
+                |                                          +-->+ Footer UI  |
+                |                                              +------------+
+                |
+                |
+                |
+                |
+                |
+                |                  +----------+           +--------------+
+                +----------------->|GRAFANA   |+--------->|PROMETHEUS    |
+            marcel-grafana.com     +----------+           +--------------+
 ```
 
 This repository serves as a reference architecture for my micro service architecture. 
