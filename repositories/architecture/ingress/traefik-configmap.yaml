@@ -22,6 +22,8 @@ data:
     storage = "acme.json"
     entryPoint = "https"
     onHostRule = true
+    [[acme.domains]]
+      main = "local1.com"
     [acme.httpChallenge]
     entryPoint = "http"
     ################################################################
