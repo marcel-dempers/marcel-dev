@@ -50,3 +50,17 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: frame-service
+spec:
+  rules:
+  - host: marcel-dev
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frame-service
+          servicePort: 80
