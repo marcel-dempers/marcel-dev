@@ -9,6 +9,21 @@ data:
       [metrics.prometheus]
         entryPoint = "traefik"
         buckets = [0.1,0.3,1.2,5.0]
+    [entryPoints]
+      [entryPoints.http]
+      address = ":80"
+        [entryPoints.http.redirect]
+        entryPoint = "https"
+      [entryPoints.https]
+      address = ":443"
+      [entryPoints.https.tls]
+    [acme]
+    email = "your-email-here@my-awesome-app.org"
+    storage = "acme.json"
+    entryPoint = "https"
+    onHostRule = true
+    [acme.httpChallenge]
+    entryPoint = "http"
     ################################################################
     # Global configuration
     ################################################################
